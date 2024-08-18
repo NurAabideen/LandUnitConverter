@@ -18,7 +18,7 @@ This Python Unit Converter App provides a simple GUI for converting between vari
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/unit-converter-app.git
+git clone https://github.com/NurAabideen/unit-converter-app.git
 cd unit-converter-app
 ```
 
@@ -72,9 +72,3 @@ Feel free to fork this repository, create issues, and submit pull requests. Cont
 
 For any questions or feedback, please open an issue on the GitHub repository.
 
-```
-
-### Notes:
-- Replace the `git clone` URL with your actual GitHub repository URL.
-- Add a `LICENSE` file if you plan to use a specific license like MIT.
-- You may also want to include a screenshot of the app in action in the `README.md` if you're hosting the project on GitHub.
