@@ -2,6 +2,14 @@
 
 This repository contains two versions of a Unit Converter App that provides a simple interface for converting between various traditional measurement units. The first version (`app.py`) is a desktop application built using Tkinter, while the second version (`app-flux.py`) is a web application built using Flask.
 
+## Special Notes
+
+### Land Measurement Units in Bangladesh
+
+This application is designed to handle traditional land measurement units used in Bangladesh. These units are specific to land area calculations and are commonly used in various contexts within the country. After an extensive search, it was challenging to find a reliable tool that could convert between these units.
+
+To provide accurate conversions, this app utilizes conversion data sourced from the [Ministry of Land, Bangladesh](https://minland.gov.bd/site/page/4e44d7ef-2c36-4483-aa4e-77b294de729c/Land-Measurement-Unit). The data is used to ensure the app offers correct and reliable conversions between these traditional units.
+
 ## Features
 
 - **Unit Conversion**: Convert values between traditional units using predefined conversion data.
