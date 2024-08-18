@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter</title>
+    <style>
+        /* Basic styling for layout */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            text-align: center;
+        }
+        select, input, button {
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Unit Converter</h1>
+    <input type="text" id="input_value" placeholder="Enter value" />
+    <select id="unit_from"></select>
+    <button id="swap_button">⇄</button>
+    <select id="unit_to"></select>
+    <input type="text" id="result_value" readonly placeholder="Result" />
+
+    <script>
+        const units = {{ units|tojson }};
+        const unitFromSelect = document.getElementById('unit_from');
+        const unitToSelect = document.getElementById('unit_to');
+        const swapButton = document.getElementById('swap_button');
+        const inputValue = document.getElementById('input_value');
+        const resultValue = document.getElementById('result_value');
+
+        // Populate the dropdowns
+        units.forEach(unit => {
+            const optionFrom = document.createElement('option');
+            const optionTo = document.createElement('option');
+            optionFrom.value = unit;
+            optionTo.value = unit;
+            optionFrom.text = unit;
+            optionTo.text = unit;
+            unitFromSelect.add(optionFrom);
+            unitToSelect.add(optionTo);
+        });
+
+        // Function to perform conversion
+        function convert() {
+            const value = parseFloat(inputValue.value);
+            const unitFrom = unitFromSelect.value;
+            const unitTo = unitToSelect.value;
+
+            fetch('/convert', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ value, unit_from: unitFrom, unit_to: unitTo })
+            })
+            .then(response => response.json())
+            .then(data => {
+                resultValue.value = data.result;
+            });
+        }
+
+        // Event listeners for conversion and swap
+        unitFromSelect.addEventListener('change', convert);
+        unitToSelect.addEventListener('change', convert);
+        inputValue.addEventListener('input', convert);
+
+        swapButton.addEventListener('click', () => {
+            const temp = unitFromSelect.value;
+            unitFromSelect.value = unitToSelect.value;
+            unitToSelect.value = temp;
+            convert();
+        });
+    </script>
+</body>
+</html>
