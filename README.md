@@ -1,74 +1,102 @@
 # Unit Converter App
 
-This Python Unit Converter App provides a simple GUI for converting between various traditional measurement units. The app allows users to input a value, select units to convert from and to, and instantly see the conversion result. It also includes a feature to swap the selected units and allows the result value to be copied using the mouse.
+This repository contains two versions of a Unit Converter App that provides a simple interface for converting between various traditional measurement units. The first version (`app.py`) is a desktop application built using Tkinter, while the second version (`app-flux.py`) is a web application built using Flask.
 
 ## Features
 
-- **Unit Conversion**: Input a value, select the units you want to convert from and to, and see the conversion result instantly.
-- **Swap Units**: A swap button between the units allows you to easily switch the conversion direction.
-- **Copy Result**: The conversion result can be selected and copied using the mouse.
+- **Unit Conversion**: Convert values between traditional units using predefined conversion data.
+- **Swap Units**: Easily swap the units and update the conversion.
+- **Copy Result**: Select and copy the conversion result using the mouse (in the desktop version).
+
+## Table of Contents
+
+- [Installation](#installation)
+  - [Desktop Version (Tkinter)](#desktop-version-tkinter)
+  - [Web Version (Flask)](#web-version-flask)
+- [Usage](#usage)
+  - [Running the Desktop Version](#running-the-desktop-version)
+  - [Running the Web Version](#running-the-web-version)
+- [File Structure](#file-structure)
+- [Customization](#customization)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Installation
 
-### Prerequisites
+### Desktop Version (Tkinter)
 
-- Python 3.x
-- Tkinter (usually included with Python)
+1. **Clone the Repository**:
 
-### Clone the Repository
+   ```bash
+   git clone https://github.com/NurAabideen/LandUnitConverter.git
+   cd unit-converter-app
+   ```
 
-```bash
-git clone https://github.com/NurAabideen/unit-converter-app.git
-cd unit-converter-app
-```
+2. **Run the Desktop App**:
 
-### Install Dependencies
+   The Tkinter version does not require any additional dependencies. Simply run:
 
-This app does not require any external dependencies beyond the standard library.
+   ```bash
+   python app.py
+   ```
 
-### Run the App
+### Web Version (Flask)
 
-```bash
-python app.py
-```
+1. **Ensure Python 3.x and `pip` are installed**.
 
-## File Structure
+2. **Install Flask**:
 
-- `app.py`: The main application file containing the GUI code.
-- `conversion_data.py`: A Python file containing the conversion data used by the app.
-- `README.md`: Documentation file.
+   ```bash
+   pip install Flask
+   ```
+
+3. **Run the Web App**:
+
+   ```bash
+   python app-flux.py
+   ```
 
 ## Usage
 
-1. Run the application using `python app.py`.
-2. Input a value in the input field.
-3. Select the unit you want to convert from in the first dropdown.
-4. Select the unit you want to convert to in the second dropdown.
-5. The conversion result will be displayed in the result field.
-6. Click the swap button ("⇄") to switch the units and update the conversion.
-7. The result value can be selected and copied using your mouse.
+### Running the Desktop Version
 
-## Example
+- Run `app.py` using Python:
 
-1. Input `4` in the input field.
-2. Select `Kora` in the first dropdown.
-3. Select `Gonda` in the second dropdown.
-4. The result will show `1`.
-5. Click the swap button to see `1 Gonda = 4 Kora`.
+  ```bash
+  python app.py
+  ```
+
+- Input a value, select the units to convert from and to, and see the conversion result. Use the swap button to switch units.
+
+### Running the Web Version
+
+- Run `app-flux.py` using Python:
+
+  ```bash
+  python app-flux.py
+  ```
+
+- Open your web browser and navigate to `http://127.0.0.1:5000/`.
+
+- Input a value, select the units to convert from and to, and see the conversion result. Use the swap button to switch units.
+
+## File Structure
+
+- `app.py`: The Tkinter-based desktop application.
+- `app-flux.py`: The Flask-based web application.
+- `conversion_data.py`: The conversion data used by both versions.
+- `templates/index.html`: The HTML template used by the Flask web application.
+- `README.md`: Documentation file.
 
 ## Customization
 
-You can modify the `conversion_data.py` file to add, remove, or update unit conversions.
-
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
+You can modify the `conversion_data.py` file to add, remove, or update unit conversions for both versions of the app.
 
 ## Contributing
 
 Feel free to fork this repository, create issues, and submit pull requests. Contributions are always welcome!
 
-## Contact
+## License
 
-For any questions or feedback, please open an issue on the GitHub repository.
-
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
+```
