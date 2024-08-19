@@ -37,7 +37,7 @@ To provide accurate conversions, this app utilizes conversion data sourced from 
 
    ```bash
    git clone https://github.com/NurAabideen/LandUnitConverter.git
-   cd unit-converter-app
+   cd LandUnitConverter
    ```
 
 2. **Run the Desktop App**:
