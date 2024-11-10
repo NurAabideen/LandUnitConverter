@@ -44,9 +44,9 @@ Description=n8n
 
 [Service]
 Type=simple
-Environment="N8N_SECURE_COOKIE=false"
-Environment="WEBHOOK_URL=http://n8n.cybernur.com"
-Environment="N8N_HOST=n8n.cybernur.com"
+Environment=N8N_SECURE_COOKIE=false
+Environment=WEBHOOK_URL=http://n8n.cybernur.com
+Environment=N8N_HOST=n8n.cybernur.com
 ExecStart=n8n start
 [Install]
 WantedBy=multi-user.target
